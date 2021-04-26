@@ -1,0 +1,58 @@
+NOME: ÉRIK VINICIUS SOUSA SILVA
+RGA: 201811310004
+
+Requisito: 
+- O projeto final deverá ser desenvolvido em grupos de no máximo 3 pessoas.
+- Deverá conter pelo menos 5 entidades.
+- Deverá estar no github.
+- O banco de dados pode ser a escolha do grupo.
+
+Tabela sobre registro de livros e leitores no PostgreSQL.
+
+
+
+CREATE TABLE public.leitor (
+    	Codigo integer,
+    	Leitor character varying,
+	Telefone integer,
+	CPF integer,
+		CONSTRAINT leitor_pkey PRIMARY KEY (codigo)
+);
+CREATE TABLE public.autor (
+    	Codigo integer,
+    	Autor character varying,
+		CONSTRAINT autor_pkey PRIMARY KEY (codigo)
+);
+CREATE TABLE public.livros (
+	Codigo integer,
+    	Titulo character varying,
+	Editora character varying,
+	Assunto character varying,
+		CONSTRAINT cliente_pkey PRIMARY KEY (codigo)
+);
+CREATE TABLE public.assunto (
+	Codigo integer,
+	Sigla character varying,
+    	Descrição character varying,
+		CONSTRAINT assunto_pkey PRIMARY KEY (codigo)
+);
+CREATE TABLE public.editora (
+    	Codigo integer,
+    	Nome character varying,
+		CONSTRAINT editora_pkey PRIMARY KEY (codigo)
+);
+INSERT INTO public.leitor VALUES (1,'Erik Vinicius Sousa','12346789','0124789745');
+INSERT INTO public.leitor VALUES (2,'Willian Oliveira Leal','98765432','01234567801');
+INSERT INTO public.leitor VALUES (3,'Luis Felipe Gomes','23345678','01245367864');
+INSERT INTO public.autor VALUES (1,'William Shakespeare');
+INSERT INTO public.autor VALUES (2,'Clarice Lispector');
+INSERT INTO public.autor VALUES (3,'José Saramago');
+INSERT INTO public.livros VALUES (1,'Romeu e Julieta','Penguin','Romântico');
+INSERT INTO public.livros VALUES (2,'Romanceiro da Inconfidência','Global Editora','Romântico');
+INSERT INTO public.livros VALUES (3,'Ensaio sobre a cegueira','Companhia das Letras','Ficção');
+INSERT INTO public.assunto VALUES (1,'ReJ','Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto. Romeu, filho dos Montéquio, e Julieta, herdeira dos Capuleto, desafiam a rixa familiar e sonham com um impossível futuro, longe da violência e da loucura. Romeu e Julieta é a primeira das grandes tragédias de William Shakespeare, e esta nova tradução de José Francisco Botelho recria com maestria o ritmo ao mesmo tempo frenético e melancólico do texto shakespeariano. Contando também com um excelente ensaio introdutório do especialista Adrian Poole, esta edição traz nova vida a uma das mais emocionantes histórias de amor já contadas.');
+INSERT INTO public.assunto VALUES (2,'RdI','Os poemas aqui reunidos – cada qual com vida própria – formam um longo e único poema, lírico e épico ao mesmo tempo em que conta a história de Tiradentes, o mártir da Inconfidência Mineira. Elaborado por meio de uma profunda pesquisa, a conspiração revolucionária de poetas é recriada com maestria pela imensa maior referência da poesia, Cecília Meireles.');
+INSERT INTO public.assunto VALUES (3,'ESaC','Uma terrível ""treva branca"" vai deixando cegos, um a um, os habitantes de uma cidade. Com essa fantasia aterradora, Saramago nos obriga fechar os olhos e ver. Recuperar a lucidez, resgatar o afeto: essas são as tarefas do escritor e de cada leitor, diante da pressão dos tempos e do que se perdeu.');
+INSERT INTO public.editora VALUES (1,'Penguin');
+INSERT INTO public.editora VALUES (2,'Global Editora');
+INSERT INTO public.editora VALUES (3,'Companhia das Letras');
